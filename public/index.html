@@ -1,0 +1,36 @@
+<!--
+  ***
+  Name: Nur Ahmed
+  Date: 5/16/2024
+  CSE 154 AD
+  TA: Allan Tran and Max Beard
+  This is a quote generator that displays quotes and allows user's to add more.
+  ***
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Quote Generator</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="index.js"></script>
+</head>
+<body>
+  <div id="intro-view" class="view">
+    <h1>Welcome to the Quote Generator</h1>
+    <button id="start-btn">Start Exploring Quotes</button>
+  </div>
+  <div id="quotes-view" class="view">
+    <h2>Explore Quotes</h2>
+    <button id="get-random-quote-btn">Get Random Quote</button>
+    <button id="view-all-quotes-btn">View All Quotes</button>
+    <button id="toggle-add-quote-btn">Add New Quote</button>
+    <div id="add-quote-form">
+      <input type="text" id="new-quote" placeholder="Enter a new quote">
+      <input type="text" id="quote-author" placeholder="Author's name">
+      <button id="submit-quote-btn">Submit Quote</button>
+    </div>
+    <p id="quote-container"></p>
+  </div>
+</body>
+</html>

@@ -1,0 +1,76 @@
+/*
+  Name: Nur Ahmed
+  Date: 5/16/2024
+  CSE 154 AD
+  TA: Allan Tran and Max Beard
+  This is a stylesheet for the quote generator making the interface have a clean look
+  for hovered items, buttons, and structure of the input box.
+*/
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  padding: 20px;
+}
+
+#intro-view {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 600px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2 {
+  text-align: center;
+  color: #333;
+}
+
+button {
+  background-color: #5cb85c;
+  color: white;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  width: auto;
+  margin: 10px;
+}
+
+button:hover {
+  background-color: #58aa58;
+  transform: scale(1.05);
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border: 2px solid #ddd;
+  border-radius: 4px;
+}
+
+#quote-container {
+  width: 100%;
+  max-width: 600px;
+  background-color: #fff;
+  padding: 20px;
+  margin-top: 20px;
+  border-left: 5px solid #5cb85c;
+}
+
+.error {
+  color: #D8000C;
+  background-color: #FFD2D2;
+  padding: 10px;
+  border-radius: 4px;
+}
