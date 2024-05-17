@@ -18,6 +18,8 @@ const fs = require('fs').promises;
 const app = express();
 app.use(express.json());
 const QUOTES_FILE = 'quotes.json';
+const INTERNAL_ERR = 500;
+const STATUS_OK = 201;
 
 app.get('/random-quote', async (req, res) => {
   try {
@@ -26,7 +28,7 @@ app.get('/random-quote', async (req, res) => {
     let randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
     res.json(randomQuote);
   } catch (error) {
-    res.status(500).send('Error retrieving quotes');
+    res.status(INTERNAL_ERR).send('Error retrieving quotes');
   }
 });
 
@@ -37,9 +39,9 @@ app.post('/add-quote', async (req, res) => {
     let quotesObj = JSON.parse(data);
     quotesObj.quotes.push(newQuote);
     await fs.writeFile(QUOTES_FILE, JSON.stringify(quotesObj, null, 2));
-    res.status(201).send('Quote added');
+    res.status(STATUS_OK).send('Quote added');
   } catch (error) {
-    res.status(500).send('Error saving the quote');
+    res.status(INTERNAL_ERR).send('Error saving the quote');
   }
 });
 
@@ -48,10 +50,10 @@ app.get('/all-quotes', async (req, res) => {
     let data = await fs.readFile(QUOTES_FILE, 'utf8');
     res.json(JSON.parse(data).quotes);
   } catch (error) {
-    res.status(500).send('Error retrieving all quotes');
+    res.status(INTERNAL_ERR).send('Error retrieving all quotes');
   }
 });
 
 app.use(express.static("public"));
 const PORT = process.env.PORT || 3000;
-app.listen(PORT)
+app.listen(PORT);

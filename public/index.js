@@ -63,20 +63,20 @@
       return;
     }
 
-    const quote = { text: quoteText, author: authorText };
+    const quote = {text: quoteText, author: authorText};
     fetch('/add-quote', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: {'Content-Type': 'application/json'},
       body: JSON.stringify(quote)
     })
-    .then(statusCheck)
-    .then(() => {
-      displayQuote(`Quote added: "${quoteText}" by ${authorText}`);
-      id("new-quote").value = "";
-      id("quote-author").value = "";
-      toggleView("add-quote-form");
-    })
-    .catch(handleError);
+      .then(statusCheck)
+      .then(() => {
+        displayQuote(`Quote added: "${quoteText}" by ${authorText}`);
+        id("new-quote").value = "";
+        id("quote-author").value = "";
+        toggleView("add-quote-form");
+      })
+      .catch(handleError);
   }
 
   /**
