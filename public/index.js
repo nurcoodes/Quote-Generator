@@ -1,5 +1,16 @@
 /**
- * Main IIFE (Immediately Invoked Function Expression) to encapsulate and execute script upon window load.
+ * Name: Nur Ahmed
+ * Date: 5/16/2024
+ * CSE 154 AD
+ * TA: Allan Tran and Max Beard
+ * This is the client-side application for the quote generator project.
+ * Provides dynamics UI and confidures button to load data.
+ * The application supports the following operations:
+ * - Retrieving a random quote
+ * - Adding a new quote with both text and author
+ * - Retrieving all quotes stored in the system
+ * This server uses Express.js and handles JSON data stored in a file named 'quotes.json'
+ * Quote source https://blog.hubspot.com/sales/famous-quotes
  */
 "use strict";
 (function() {
@@ -28,7 +39,9 @@
    */
   function switchView(viewId) {
     let views = document.querySelectorAll(".view");
-    views.forEach(view => view.style.display = 'none');
+    views.forEach(view => {
+      view.style.display = 'none';
+    });
     id(viewId).style.display = 'block';
   }
 
